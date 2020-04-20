@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 
 {% block body %}
-            <div id="layoutSidenav_content">
-                <main>
+<div id="layoutSidenav_content"> 
+    <main>
                     <div class="container-fluid">
                         <h1 class="mt-4">Dashboard</h1>
                         <ol class="breadcrumb mb-4">
@@ -75,26 +75,21 @@
                                                 <th>Salary</th>
                                             </tr>
                                         </thead>
-                                        <tfoot>
-                                            <tr>
-                                                <th>Total</th>
-                                                <th>Total</th>
-                                                <th>Total</th>
-                                                <th>Total</th>
-                                                <th>Total</th>
-                                                <th>Total</th>
-                                            </tr>
-                                        </tfoot>
+                                       
                                         <tbody>
+                                            {% for item in items %}
                                             <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
-                                                <td>61</td>
-                                                <td>2011/04/25</td>
-                                                <td>$320,800</td>
+                                                
+                                                <td>{{item.name}}</td>
+                                                <td>{{item.post}}</td>
+                                                <td>{{item.office}}</td>
+                                                <td>{{item.age}}</td>
+                                                <td>{{item.joining}}</td>
+                                                <td>{{item.salary}}</td>
+                                                
+                                               
                                             </tr>
-                                         
+                                            {% endfor %}
                                         </tbody>
                                     </table>
                                 </div>
@@ -116,4 +111,6 @@
                 </footer>
             </div>
         </div>
-   {% endblock %}
+        </main>
+    </div>
+        {% endblock %}

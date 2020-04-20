@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+
+{% block home %}
+<div id="layoutSidenav_content"> 
+        <main>
+                <div class="container-fluid cbox">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card bg-primary text-white mb-4">
+                                <div class="card-body"><h3> Employee Details</h3>
+                                    <table class="table">
+                                        <thead class="thcard">
+                                          <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">First</th>
+                                            <th scope="col">Last</th>
+                                            <th scope="col">Handle</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% for item in items %}
+                                          <tr>
+                                              
+                                            <th scope="row">{{forloop.counter}}</th>
+                                            <td>{{item.name}}</td>
+                                            <td>{{item.post}}</td>
+                                            <td>{{item.age}}</td>
+                                          </tr>
+                                          {% endfor %}
+                                        </tbody>
+                                      </table>
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4">
+                            <div class="card bg-primary text-white mb-4">
+                                <div class="card-body">Primary Card</div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card bg-primary text-white mb-4">
+                                <div class="card-body">Primary Card</div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </main>
+</div>
+{% endblock %}

@@ -15,4 +15,15 @@ def display_emp(request):
         'items' : items
     }
 
-    return render(request, 'index.html', context)
+    return render(request, 'home.html', context)
+
+def display_card(request):
+    items = Employee.objects.all()
+    
+
+    context = {
+        'items' : items
+        
+    }
+
+    return render(request, 'home.html', context)
