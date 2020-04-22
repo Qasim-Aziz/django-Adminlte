@@ -9,5 +9,4 @@ class Employee(models.Model):
     joining = models.DateField(auto_now_add=True)
     salary = models.BigIntegerField(blank=False)
 
-    def __str__(self):
-        return self.name
+    

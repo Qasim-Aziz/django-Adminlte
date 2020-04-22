@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from admind.models import Employee
+from .forms import *
 
 def index(request):
 
@@ -27,3 +28,14 @@ def display_card(request):
     }
 
     return render(request, 'home.html', context)
+
+def add_emp(request):
+    if request.method == 'POST':
+        form = EmployeeForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    else:
+        form = EmployeeForm()
+        return render(request,'add_new.html',{'form':form})

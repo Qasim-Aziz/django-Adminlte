@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block add_new %}
+<div id="layoutSidenav_content"> 
+    <main>
+        <div class="container mt-4">
+           <form method="POST">{% csrf_token %}
+               {% for field in form %}
+               <div class="form-group row">
+                   <label for="id_{{field.name}}" class="col-2 col-form-label">{{field.label}}</label>
+                    <div class="col-10">
+                   {{field}}
+                </div>
+               </div>
+               {% endfor %}
+               <button type="submmit" class="btn btn-primary" name="button">Add Employee</button>
+           </form>
+        </div>
+
+
+        </main>
+        </div>
+
+        {% endblock %}
